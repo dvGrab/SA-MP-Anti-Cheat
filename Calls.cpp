@@ -11,7 +11,7 @@ void CCalls::AddChatMessage(char * szText, DWORD dwColor)
 	DWORD dwAddress = Function.ModuleAddr[0] + 0x64010; 
 	DWORD dwChatPtr = Function.ModuleAddr[0] + 0x21A0E4;
 
-	if (dwAddress && dwChatPtr)
+	if (dwAddress != NULL && dwChatPtr != NULL)
 	{
 		_asm
 		{
@@ -32,7 +32,7 @@ void CCalls::AddPlayerDialog(char * szTitle, char * szText, char * szButton, cha
 	DWORD dwAddress = Function.ModuleAddr[0] + 0x6B9C0;
 	DWORD dwDialogPtr = Function.ModuleAddr[0] + 0x21A0B8;
 
-	if (dwAddress && dwDialogPtr)
+	if (dwAddress != NULL && dwDialogPtr != NULL)
 	{
 		_asm
 		{

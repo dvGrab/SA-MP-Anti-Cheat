@@ -7,7 +7,8 @@ class CReading
 {
 public:
 	int Listen(char * Buffer);
-	void Name(void);
+
+	char Temp[256];
 };
 extern CReading Reading;
 

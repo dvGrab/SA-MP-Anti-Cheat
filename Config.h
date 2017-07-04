@@ -12,7 +12,7 @@ public:
 	CConfig(char * FileName);
 	int ReadInteger(char * AppName, char * KeyName, int Default);
 	char * ReadString(char * AppName, char * KeyName, char * Default);
-	float CConfig::ReadFloat(char * AppName, char * KeyName, char * Default);
+	double ReadFloat(char * AppName, char * KeyName, char * Default);
 	bool ReadBool(char * AppName, char * KeyName, char * Default);
 };
 extern CConfig Config;

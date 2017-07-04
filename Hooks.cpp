@@ -4,11 +4,13 @@
 	File: Hooks.cpp
 	Author: Grab
 	This program is developed for german-crimetime.de!
-	*/
+*/
 
 
 typedef int(_cdecl * readchatmsg_t)(DWORD, char *, ...);
 readchatmsg_t ReadChatMessage_o;
+
+HWND WindowHandle;
 
 int ReadChatMessage(DWORD addr, char * Text, ...)
 {
@@ -16,7 +18,7 @@ int ReadChatMessage(DWORD addr, char * Text, ...)
 
 	Hooks.Count++;
 
-	if (Hooks.Count > 3 && Hooks.Unlocked != 1)
+	if (Hooks.Count > 1 && Hooks.Unlocked != 1)
 	{
 		Handle.GetModules();
 		Hooks.Unlocked = true;
@@ -25,7 +27,6 @@ int ReadChatMessage(DWORD addr, char * Text, ...)
 	
 	_asm popad;
 	return ReadChatMessage_o(addr, Text);
-	
 }
 
 void CHooks::Initialize(void)

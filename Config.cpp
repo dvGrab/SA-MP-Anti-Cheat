@@ -20,7 +20,7 @@ char * CConfig::ReadString(char * AppName, char * KeyName, char * Default)
 	return Temp;
 }
 
-float CConfig::ReadFloat(char * AppName, char * KeyName, char * Default)
+double CConfig::ReadFloat(char * AppName, char * KeyName, char * Default)
 {
 	char Temp[256];
 	GetPrivateProfileString(AppName, KeyName, Default, Temp, sizeof(Temp), Name);
